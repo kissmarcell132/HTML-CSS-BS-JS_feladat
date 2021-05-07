@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="hu">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="style.css">
+  <script src="teglatest.js"></script>
+  <title>Kalkulátor</title>
+</head>
+
+<body>
+
+  <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
+    <a class="navbar-brand" href="#">Téglatest térfogata és felszíne</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="collapsibleNavbar">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="teglalap.html">Téglalap területének és kerületének kalkulátora</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="kor.html">Kör területének és kerületének kalkulátora</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="henger.html">Henger térfogatának és felszínének kalkulátora</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="index.html">Kapcsolat a készítővel</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="row">
+    <div class="p-2 border border-white col-lg-6 resz">
+      <h1>A téglatest</h1>
+      <img class="cikkep2" src="kepek/Téglatest.png" alt="Téglatest" title="Téglatest">
+      <p>A téglatest egy olyan egyenes hasáb, amelynek alaplapja téglalap. A téglatest a hengerszerű testekből származtatható, erről bővebben a hengernél írunk. 6 téglalap határolja. A szemközti téglalapok egybevágóak és párhuzamosak.
+        A téglatest különböző hosszúságú oldalai páronként merőlegesek egymásra.</p>
+    </div>
+    <div class="p-2 border border-white col-lg-6 resz">
+      <h2>A téglatest térfogatának kiszámítása</h2>
+      <img class="cikkep4" src="kepek/téglatest térfogat.png" alt="Téglatest térfogata" title="Téglatest térfogata">
+      <p>A téglatest térfogata a különböző hosszúságú oldalai hosszának a szorzata.<br>
+        Ebből számítva a képlet így néz ki:<b> a * b * c</b></p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="p-2 border border-white col-lg-4 resz">
+      <h2>A téglatest felszínének kiszámítása</h2>
+      <img class="cikkep" src="kepek/téglatest felszín.png" alt="Téglatest felszíne" title="Téglatest felszíne">
+      <p>A téglatest egymással szemközti oldalai egybevágóak, így a felszín összesen 6 darab, három különböző területű téglalap területének összege.<br>
+        Ezért a képlet így néz ki:<b> 2 * (a * b + a * c + b * c)</b></p>
+    </div>
+    <div class="p-2 border border-white col-lg-8 resz">
+      <h2>Kalkulátor</h2>
+      <div>
+        <form>
+          <div class="row mb-2">
+            <div class="col-12 col-md-4">
+              <label for="mértékegység">Választott mértékegység</label>
+            </div>
+            <div class="col-12 col-md-8">
+              <select class="form-control" id="mértékegység" onclick="szamol()">
+                <option value="m">Méter</option>
+                <option value="dm">Deciméter</option>
+                <option value="cm" selected>Centiméter</option>
+                <option value="mm">Milliméter</option>
+              </select>
+            </div>
+          </div>
+          <div class="row mb-2">
+            <div class="col-12 col-md-4">
+              <label for="a_oldal">A téglatest a oldala: </label>
+            </div>
+            <div class="col-12 col-md-8">
+              <input class="form-control" type="number" id="a_oldal" min="0" onchange="szamol()">
+            </div>
+          </div>
+          <div class="row mb-2">
+            <div class="col-12 col-md-4">
+              <label for="b_oldal">A téglatest b oldala: </label>
+            </div>
+            <div class="col-12 col-md-8">
+              <input class="form-control" type="number" id="b_oldal" min="0" onchange="szamol()">
+            </div>
+          </div>
+          <div class="row mb-2">
+            <div class="col-12 col-md-4">
+              <label for="c_oldal">A téglatest c oldala: </label>
+            </div>
+            <div class="col-12 col-md-8">
+              <input class="form-control" type="number" id="c_oldal" min="0" onchange="szamol()">
+            </div>
+          </div>
+
+
+          <div class="row mb-2">
+            <div class="col-12 col-md-4">
+              <label for="terfogat">A téglatest térfogata:</label>
+            </div>
+            <div class="col-12 col-md-4">
+              <input type="text" class="form-control" id="terfogat" disabled>
+            </div>
+
+          </div>
+
+          <div class="row mb-2">
+            <div class="col-12 col-md-4">
+              <label for="felszin">A téglatest felszíne:</label>
+            </div>
+            <div class="col-12 col-md-4">
+              <input type="text" class="form-control" id="felszin" disabled>
+            </div>
+
+          </div>
+
+        </form>
+      </div>
+      <div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer class="container my-2 p-2 bg-dark border">
+    <p>2021 - Jedlik</p>
+  </footer>
+</body>
+
+</html>

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="hu">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <script src="henger.js"></script>
+    <title>Kalkulátor</title>
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
+        <a class="navbar-brand" href="#">Henger térfogata és felszíne</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="teglatest.html">Téglatest térfogatának és felszínének kalkulátora</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="teglalap.html">Téglalap területének és kerületének kalkulátora</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="kor.html">Kör területének és kerületének kalkulátora</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">Kapcsolat a készítővel</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="row">
+        <div class="p-2 border border-white col-lg-6 resz">
+            <h1>A henger</h1>
+            <img class="cikkep" src="kepek/henger.png" alt="Henger" title="Henger">
+            <p>A henger (idegen szóval <i>cilinder</i>) térbeli <b>test</b>. A henger alapját egy görbe, a vezérgörbe adja. Többnyire olyan hengerről van szó, aminek alapját ellipszis, speciális esetben kör alkotja. <br>
+                A keskenyebb, vagyis az alapot képező kör átmérőjénél lényegesen kisebb magasságú vagy szélességű hengert <b>korongnak</b> nevezik.</p>
+        </div>
+        <div class="p-2 border border-white col-lg-6 resz">
+            <h2>A henger térfogatának kiszámítása</h2>
+            <img class="cikkep" src="kepek/henger térfogat.png" alt="Henger térfogata" title="Henger térfogata">
+            <p>A henger térfogata az alap területének és a henger magasságának a szorzata.<br>
+                Amely köralapú hengernél így egyszerűsödik le:<b> r<sup>2</sup> * π * m</b>
+            </p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="p-2 border border-white col-lg-6 resz">
+            <h2>A henger felszínének kiszámítása</h2>
+            <img class="cikkep3" src="kepek/henger.felszín.svg" alt="Henger felszíne" title="Henger felszíne">
+            <p>A kör alapú henger felszíne kiszámítható a palást felületét és az alap felületének kétszeresét összegezve.<br>
+                Ebből a képlet így néz ki: <b>2 * r<sup>2</sup> * π + 2* r * π * m</b></p>
+        </div>
+        <div class="p-2 border border-white col-lg-6 resz">
+            <h2>Kalkulátor</h2>
+            <div>
+                <form>
+                    <div class="row mb-2">
+                        <div class="col-12 col-md-4">
+                            <label for="mértékegység">Választott mértékegység</label>
+                        </div>
+                        <div class="col-12 col-md-8">
+                            <select class="form-control" id="mértékegység" onclick="szamol()">
+                                <option value="m">Méter</option>
+                                <option value="dm">Deciméter</option>
+                                <option value="cm" selected>Centiméter</option>
+                                <option value="mm">Milliméter</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row mb-2">
+                        <div class="col-12 col-md-4">
+                            <label for="sugar">A henger sugara:</label>
+                        </div>
+                        <div class="col-12 col-md-8">
+                            <input class="form-control" type="number" id="sugar" min="0" onchange="szamol()">
+                        </div>
+                    </div>
+                    <div class="row mb-2">
+                        <div class="col-12 col-md-4">
+                            <label for="magassag">A henger magassága:</label>
+                        </div>
+                        <div class="col-12 col-md-8">
+                            <input class="form-control" type="number" id="magassag" min="0" onchange="szamol()">
+                        </div>
+                    </div>
+
+
+                    <div class="row mb-2">
+                        <div class="col-12 col-md-4">
+                            <label for="terfogat">A henger térfogata:</label>
+                        </div>
+                        <div class="col-12 col-md-4">
+                            <input type="text" class="form-control" id="terfogat" disabled>
+                        </div>
+
+                    </div>
+
+                    <div class="row mb-2">
+                        <div class="col-12 col-md-4">
+                            <label for="felszin">A henger felszíne:</label>
+                        </div>
+                        <div class="col-12 col-md-4">
+                            <input type="text" class="form-control" id="felszin" disabled>
+                        </div>
+
+                    </div>
+
+                </form>
+            </div>
+            <div>
+            </div>
+        </div>
+
+    </div>
+    <footer class="container my-2 p-2 bg-dark border">
+        <p>2021 - Jedlik</p>
+    </footer>
+
+</body>
+
+</html>

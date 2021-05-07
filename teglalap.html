@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <script src="teglalap.js"></script>
+    <title>Kalkulátor</title>
+</head>
+<body>
+
+      <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
+          <a class="navbar-brand" href="#">Téglalap területe és kerülete</a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="collapsibleNavbar">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link" href="teglatest.html">Téglatest térfogatának és felszínének kalkulátora</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="kor.html">Kör területének és kerületének kalkulátora</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="henger.html">Henger térfogatának és felszínének kalkulátora</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="index.html">Kapcsolat a készítővel</a>
+              </li>
+            </ul>
+          </div>
+      </nav>
+    
+    <div class="row">
+      <div class="p-2 border border-white col-lg-6 resz">
+        <h1>A téglalap</h1>
+        <img class="cikkep2" src="kepek/téglalap.png" alt="Téglalap" title="Téglalap">
+            <p>A téglalap egy olyan négyszög, amelynek minden szöge derékszög. Két-két szemközti oldala egyenlő hosszúságú, ezért minden téglalap egyben paralelogramma is. A négyzet a téglalap egy speciális típusa, amelynek minden oldala egyenlő. A téglalap belső szögeinek összege 360°. Mivel a szemközti szögeinek összege 180°, ezért a téglalap egyúttal húrnégyszög is.</p>
+      </div>
+      <div class="p-2 border border-white col-lg-6 resz">
+        <h2>A téglalap területe</h2>
+        <img class="cikkep2" src="kepek/téglalap terület.png" alt="Téglatest területe" title="Téglatest területe">
+            <p>A téglalap területe a két oldal hosszának a szorzata. <br>
+                Ez képlettel a következő: <b>a * b</b></p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="p-2 border border-white col-lg-4 resz">
+        <h2>A téglalap kerülete</h2>
+        <img class="cikkep" src="kepek/teglalap-terulete-kerulete.png" alt="Téglalap kerülete" title="Téglalap kerülete">
+            <p>A téglalap kerülete a két oldal összegének a kétszerese. <br>
+            Képlettel ez a következőképpen néz ki: <b>2 * (a + b)</b></p>
+      </div>
+      <div class="p-2 border border-white col-lg-8 resz">
+        <h2 id="kalkulator">Kalkulátor</h2>
+                <div>
+                    <form>
+                        <div class="row mb-2">
+                            <div class="col-12 col-md-4">
+                                <label for="mértékegység">Választott mértékegység</label>
+                            </div>
+                            <div class="col-12 col-md-8">
+                                <select class="form-control" id="mértékegység" onclick="szamol()">
+                                    <option value="m">Méter</option>
+                                    <option value="dm">Deciméter</option>
+                                    <option value="cm" selected>Centiméter</option>
+                                    <option value="mm">Milliméter</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row mb-2">
+                            <div class="col-12 col-md-4">
+                                <label for="a_oldal">A téglalap a oldala: </label>
+                            </div>
+                            <div class="col-12 col-md-8">
+                                <input class="form-control" type="number" id="a_oldal" min="0" onchange="szamol()">
+                            </div>
+                        </div>
+                        <div class="row mb-2">
+                            <div class="col-12 col-md-4">
+                                <label for="b_oldal">A téglalap b oldala: </label>
+                            </div>
+                            <div class="col-12 col-md-8">
+                                <input class="form-control" type="number" id="b_oldal" min="0" onchange="szamol()">
+                            </div>
+                        </div>
+
+
+                        <div class="row mb-2">
+                            <div class="col-12 col-md-4">
+                                <label for="kerület">A téglalap kerülete</label>
+                            </div>
+                            <div class="col-12 col-md-4">
+                                <input type="text" class="form-control" id="kerulet" disabled>
+                            </div>
+
+                        </div>
+
+                        <div class="row mb-2">
+                          <div class="col-12 col-md-4">
+                              <label for="terulet">A téglalap területe</label>
+                          </div>
+                          <div class="col-12 col-md-4">
+                              <input type="text" class="form-control" id="terulet" disabled>
+                          </div>
+
+                        </div>
+                        
+                    </form>
+                </div>
+                <div>
+                </div>
+            </div>
+        </div>
+        <footer class="container my-2 p-2 bg-dark border">
+          <p>2021 - Jedlik</p>
+        </footer>
+</body>
+</html>

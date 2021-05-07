@@ -1,0 +1,53 @@
+
+body {
+    background-color:lightgray;
+    margin-left: 10%;
+    margin-right: 10%;
+
+}
+h1, h2 {
+    color: black;
+    padding: 5px 25px;
+    text-decoration: underline;
+    text-align: center;
+}
+p {
+    padding: 5px 25px;
+    font-size: 130%;
+}
+.resz {
+    background-color: gray;
+}
+footer {
+    height: 50px;
+  }
+  
+  footer p {
+    text-align: center;
+    color: white;
+    font-weight: bold;
+  }
+  .cikkep {
+    float: left;
+    width: 50%;
+    margin: 20px;
+    border: 2px solid white;
+  }
+  .cikkep2 {
+    float: left;
+    width: 50%;
+    margin: 20px;
+  }
+  .cikkep3 {
+    float: left;
+    width: 30%;
+    height: 70%;
+    margin: 20px;
+    border: 2px solid white;
+  }
+  .cikkep4 {
+    float: left;
+    width: 60%;
+    height: 40%;
+    margin: 20px;
+  }

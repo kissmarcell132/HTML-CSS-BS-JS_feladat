@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="hu">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="style.css">
+  <script src="kor.js"></script>
+  <title>Kalkulátor</title>
+</head>
+
+<body>
+
+  <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
+    <a class="navbar-brand" href="#">Kör területe és kerülete</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="collapsibleNavbar">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="teglatest.html">Téglatest térfogatának és felszínének kalkulátora</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="teglalap.html">Téglalap területének és kerületének kalkulátora</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="henger.html">Henger térfogatának és felszínének kalkulátora</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="index.html">Kapcsolat a készítővel</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="row">
+    <div class="p-2 border border-white col-lg-6 resz">
+      <h1>A kör</h1>
+      <img class="cikkep" src="kepek/kör.svg" alt="Kör" title="Kör">
+      <p>A kör vagy <i>körvonal</i> egy geometriai alakzat. A geometriai meghatározás szerint kör alatt a geometriai sík tér azon pontjainak halmazát értjük, amely pontok a sík egy meghatározott pontjától <b>(középpont)</b> adott <b>(sugárnyi)</b> távolságra helyezkednek el. Körlapnak, illetve körlemeznek nevezhetjük a pontoknak azon halmazát, amelyeknek a kör középpontjától mért távolsága kisebb vagy egyenlő a kör sugarával.</p>
+    </div>
+    <div class="p-2 border border-white col-lg-6 resz">
+      <h2>A kör területének kiszámítása</h2>
+      <img class="cikkep2" src="kepek/kör terület.png" alt="Kör területe" title="Kör területe">
+      <p>A kör területe a sugár négyzetének és a π-nek a szorzata. A π (pí) egy irracionális, sőt transzcendens szám, tehát egy nem szakaszos, tizedes tört. Az értéke megközelítőleg 3,14.<br>
+        Ebből kiszámítva a képlet így néz ki: <b>r<sup>2</sup> * π</b></p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="p-2 border border-white col-lg-4 resz">
+      <h2>A kör kerületének kiszámítása</h2>
+      <img class="cikkep2" src="kepek/kör kerület.svg" alt="Kör kerülete" title="Kör kerülete">
+      <p>A kör kerülete a sugár kétszeresének és a π-nek a szorzata. Természetesen, ha a kör átmérője ismert, akkor azt is felhasználhatjuk a kerület kiszámításához.<br>
+        Ebből kifolyólag a képlet így néz ki:<b> 2 * r * π vagy d * π</b></p>
+    </div>
+    <div class="p-2 border border-white col-lg-8 resz">
+      <h2>Kalkulátor</h2>
+      <div>
+        <form>
+          <div class="row mb-2">
+            <div class="col-12 col-md-4">
+              <label for="mértékegység">Választott mértékegység</label>
+            </div>
+            <div class="col-12 col-md-8">
+              <select class="form-control" id="mértékegység" onclick="szamol()">
+                <option value="m">Méter</option>
+                <option value="dm">Deciméter</option>
+                <option value="cm" selected>Centiméter</option>
+                <option value="mm">Milliméter</option>
+              </select>
+            </div>
+          </div>
+          <div class="row mb-2">
+            <div class="col-12 col-md-4">
+              <label for="sugar">A kör sugara:</label>
+            </div>
+            <div class="col-12 col-md-8">
+              <input class="form-control" type="number" id="sugar" min="0" onchange="szamol()">
+            </div>
+          </div>
+
+
+          <div class="row mb-2">
+            <div class="col-12 col-md-4">
+              <label for="terulet">A kör területe:</label>
+            </div>
+            <div class="col-12 col-md-4">
+              <input type="text" class="form-control" id="terulet" disabled>
+            </div>
+
+          </div>
+
+          <div class="row mb-2">
+            <div class="col-12 col-md-4">
+              <label for="kerulet">A kör kerülete:</label>
+            </div>
+            <div class="col-12 col-md-4">
+              <input type="text" class="form-control" id="kerulet" disabled>
+            </div>
+
+          </div>
+
+        </form>
+      </div>
+      <div>
+      </div>
+    </div>
+
+  </div>
+  <footer class="container my-2 p-2 bg-dark border">
+    <p>2021 - Jedlik</p>
+  </footer>
+</body>
+
+</html>
