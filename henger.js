@@ -1,14 +1,6 @@
 function szamol() {
     var sugar = parseFloat(document.getElementById("sugar").value);
     var magassag = parseFloat(document.getElementById("magassag").value);
-    if (sugar <= 0) {
-    window.alert("Az a oldal értéke nem lehet 0 vagy annál kisebb szám!");
-    return NaN;
-    }
-    if (magassag <= 0) {
-    window.alert("Az a oldal értéke nem lehet 0 vagy annál kisebb szám!");
-    return NaN; 
-    }
     var mértékegység = document.getElementById("mértékegység").value;
     var pi = 3.14;
     var terfogat = sugar * sugar * pi * magassag;
